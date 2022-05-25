@@ -5,7 +5,7 @@ using System.Windows.Media;
 
 namespace BMICalculator
 {
-    internal class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
         private double? weight;
         private double? length;
