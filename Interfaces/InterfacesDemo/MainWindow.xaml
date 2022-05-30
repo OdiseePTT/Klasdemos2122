@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <ListBox Margin="5" ItemsSource="{Binding Items}" SelectedItem="{Binding SelectedItem}"/>
+        <ListBox ItemsSource="{Binding ShoppingCart}" Grid.Column="1" Margin="5"/>
+        <GroupBox Header="Betaalmethode" Grid.Column="2" Margin="5">
+            <StackPanel>
+                <RadioButton Content="Bancontact" Margin="5" IsChecked="{Binding BancontactSelected}"/>
+                <RadioButton Content="Paypal" Margin="5" IsChecked="{Binding PaypallSelected}"/>
+                <RadioButton Content="Visa" Margin="5" IsChecked="{Binding VisaSelected}"/>
+            </StackPanel>
+        </GroupBox>
+
+        <Label Content="Te betalen:" Grid.Row="1"/>
+        <Label x:Name="totalAmountLabel" Grid.Column="1" Grid.Row="1" Content="{Binding TotalAmount}"/>
+        <Button x:Name="payButton" Content="Pay" Grid.Column="2" Grid.Row="1" Margin="5" Padding="5" Command="{Binding CalculateCommand}"/>
+    </Grid>
+</Window>
