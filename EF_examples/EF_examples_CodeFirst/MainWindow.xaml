@@ -1,0 +1,63 @@
+﻿<Window x:Class="EF_examples_CodeFirst.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EF_examples_CodeFirst"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" MaxHeight="300"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Text="{Binding StudentName}"/>
+        <Button Grid.Column="1" Command="{Binding AddStudentCommand}">Voeg nieuwe student toe</Button>
+        <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}"/>
+
+        <Grid Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto" MinHeight="50"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label>Scores:</Label>
+            <ListBox Grid.Row="1" Grid.ColumnSpan="2" ItemsSource="{Binding Scores}"/>
+            <TextBox Grid.Row="2" Text="{Binding Score}"/>
+            <Button Grid.Row="2" Grid.Column="1" Command="{Binding AddScoreCommand}">Score Toevoegen</Button>
+        </Grid>
+    </Grid>
+</Window>
