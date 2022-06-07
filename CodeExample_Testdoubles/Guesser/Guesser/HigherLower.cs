@@ -1,15 +1,20 @@
-﻿using System;
-
-namespace Guesser
+﻿namespace Guesser
 {
     public class HigherLower
     {
         int number;
-
+        IRandom random;
         public HigherLower()
         {
-            Random random = new Random();
-            number = random.Next(100);
+            random = new RandomWrapper();
+            GetRandomNumber();
+        }
+
+
+        public HigherLower(IRandom random)
+        {
+            this.random = random;
+            GetRandomNumber();
         }
 
         public string MakeAGuess(int guess)
@@ -27,5 +32,11 @@ namespace Guesser
                 return "Higher";
             }
         }
+
+        private void GetRandomNumber()
+        {
+            number = random.Next(100);
+        }
+
     }
 }

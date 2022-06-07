@@ -7,7 +7,15 @@ namespace GradesHelper
     {
         private readonly StudentsDbContext studentsDbContext = new StudentsDbContext();
 
+        public GradeRepository(StudentsDbContext studentsDbContext)
+        {
+            this.studentsDbContext = studentsDbContext;
+        }
 
+        public GradeRepository()
+        {
+
+        }
 
         public void AddScore(Student student, int score)
         {
