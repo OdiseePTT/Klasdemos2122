@@ -1,7 +1,12 @@
 ﻿namespace PersonAgeValidator
 {
 
-    public class AgeValidator
+    public interface IAgeValidator
+    {
+        bool IsValidAge(int age);
+    }
+
+    public class AgeValidator : IAgeValidator
     {
         public bool IsValidAge(int age)
         {
