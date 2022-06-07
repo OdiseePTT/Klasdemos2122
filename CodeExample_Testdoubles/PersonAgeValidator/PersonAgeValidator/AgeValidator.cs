@@ -10,7 +10,7 @@
     {
         public bool IsValidAge(int age)
         {
-            return age > 18 && age < 70;
+            return age >= 18 && age <= 70;
         }
     }
 }
