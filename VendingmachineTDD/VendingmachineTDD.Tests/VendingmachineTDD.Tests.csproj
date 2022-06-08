@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\ReportGenerator.5.1.9\build\netstandard2.0\ReportGenerator.props" Condition="Exists('..\packages\ReportGenerator.5.1.9\build\netstandard2.0\ReportGenerator.props')" />
-  <Import Project="..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props')" />
-  <Import Project="..\packages\NUnit.3.13.1\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.1\build\NUnit.props')" />
+  <Import Project="..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.13.3\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3AE043DF-9F9A-4001-A7ED-CF15D3E1FB0D}</ProjectGuid>
+    <ProjectGuid>{D4A2F587-EFEF-46DA-BC04-58049AA2710D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PersonAgeValidator.Tests._1</RootNamespace>
-    <AssemblyName>PersonAgeValidator.Tests.1</AssemblyName>
+    <RootNamespace>VendingmachineTDD.Tests</RootNamespace>
+    <AssemblyName>VendingmachineTDD.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -36,8 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.13.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.13.1\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,17 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgeValidatorTests.cs" />
-    <Compile Include="PersonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VendingMachineTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PersonAgeValidator\PersonAgeValidator.csproj">
-      <Project>{76393b85-8c56-4d27-9bf6-10581e4e7deb}</Project>
-      <Name>PersonAgeValidator</Name>
+    <ProjectReference Include="..\VendingmachineTDD\VendingmachineTDD.csproj">
+      <Project>{7fbe1069-cf94-4c1e-97f4-6ce135b3ecb4}</Project>
+      <Name>VendingmachineTDD</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -67,10 +65,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\NUnit.3.13.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.1\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.17.0\build\net35\NUnit3TestAdapter.props'))" />
-    <Error Condition="!Exists('..\packages\OpenCover.4.7.1221\build\OpenCover.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCover.4.7.1221\build\OpenCover.targets'))" />
-    <Error Condition="!Exists('..\packages\ReportGenerator.5.1.9\build\netstandard2.0\ReportGenerator.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ReportGenerator.5.1.9\build\netstandard2.0\ReportGenerator.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.3\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.4.2.1\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
-  <Import Project="..\packages\OpenCover.4.7.1221\build\OpenCover.targets" Condition="Exists('..\packages\OpenCover.4.7.1221\build\OpenCover.targets')" />
 </Project>
