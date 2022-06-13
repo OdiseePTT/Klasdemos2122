@@ -1,0 +1,24 @@
+﻿<Application x:Class="BlackJack.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:BlackJack">
+
+    <Application.Resources>
+        <Style TargetType="Button">
+            <Setter Value="5" Property="Margin"/>
+            <Setter Value="5" Property="Padding"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Value="5" Property="Margin"/>
+            <Setter Value="5" Property="Padding"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Value="5" Property="Margin"/>
+            <Setter Value="5" Property="Padding"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Value="5" Property="Margin"/>
+            <Setter Value="5" Property="Padding"/>
+        </Style>
+    </Application.Resources>
+</Application>

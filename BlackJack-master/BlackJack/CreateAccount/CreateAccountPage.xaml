@@ -1,0 +1,34 @@
+﻿<Page x:Class="BlackJack.CreateAccountPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BlackJack"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CreateAccountPage">
+
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+            <Label HorizontalAlignment="Right">Username:</Label>
+            <TextBox Grid.Column="1" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Background="{Binding UserBackgroundColor}"/>
+            <Label Grid.Row="1" HorizontalAlignment="Right">Password:</Label>
+            <PasswordBox Grid.Column="1" Grid.Row="1" PasswordChanged="passwordBox_PasswordChanged" x:Name="passwordBox" Background="{Binding PasswordBackgroundColor}"/>
+            <Label Grid.Row="2" HorizontalAlignment="Right">Validatie Password:</Label>
+            <PasswordBox Grid.Column="1" Grid.Row="2" PasswordChanged="checkPasswordBox_PasswordChanged" x:Name="checkPasswordBox" Background="{Binding CheckPasswordBackgroundColor}"/>
+            <Button Grid.Row="3" Command="{Binding CancelCommand}">Cancel</Button>
+            <Button Grid.Row="3" Grid.Column="1" Command="{Binding CreateAccountCommand}" IsEnabled="{Binding CreateAccountButtonEnabled}">Maak Account</Button>
+
+        </Grid>
+    </Grid>
+</Page>
